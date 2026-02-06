@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 int main() {
+
     int casasTorre = 5;
     int i;
 
@@ -10,6 +11,7 @@ int main() {
     }
 
     printf("\n");
+    
     int casasBispo = 5;
     int contadorBispo = 1;
 
@@ -20,6 +22,7 @@ int main() {
     }
 
     printf("\n");
+
     int casasRainha = 8;
     int contadorRainha = 1;
 
@@ -28,6 +31,24 @@ int main() {
         printf("Esquerda\n");
         contadorRainha++;
     } while (contadorRainha <= casasRainha);
+
+    printf("\n");
+
+    int movimentosVerticais = 2;
+    int movimentosHorizontais = 1;
+    int j;
+
+    printf("Movimento do Cavalo:\n");
+
+    for (j = 1; j <= movimentosVerticais; j++) {
+        printf("Baixo\n");
+    }
+
+    int contadorCavalo = 1;
+    while (contadorCavalo <= movimentosHorizontais) {
+        printf("Esquerda\n");
+        contadorCavalo++;
+    }
 
     return 0;
 }
