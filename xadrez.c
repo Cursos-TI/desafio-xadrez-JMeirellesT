@@ -1,54 +1,81 @@
 #include <stdio.h>
 
-int main() {
-
-    int casasTorre = 5;
-    int i;
-
-    printf("Movimento da Torre:\n");
-    for (i = 1; i <= casasTorre; i++) {
-        printf("Direita\n");
+void moverTorre(int casas) {
+    if (casas == 0) {
+        return;
     }
 
-    printf("\n");
-    
-    int casasBispo = 5;
-    int contadorBispo = 1;
+    printf("Direita\n");
+    moverTorre(casas - 1);
+}
 
-    printf("Movimento do Bispo:\n");
-    while (contadorBispo <= casasBispo) {
-        printf("Cima Direita\n");
-        contadorBispo++;
+void moverRainha(int casas) {
+    if (casas == 0) {
+        return;
     }
 
-    printf("\n");
+    printf("Esquerda\n");
+    moverRainha(casas - 1);
+}
 
-    int casasRainha = 8;
-    int contadorRainha = 1;
+void moverBispo(int casas) {
+    if (casas == 0) {
+        return;
+    }
 
-    printf("Movimento da Rainha:\n");
-    do {
-        printf("Esquerda\n");
-        contadorRainha++;
-    } while (contadorRainha <= casasRainha);
+    int vertical;
+    int horizontal;
 
-    printf("\n");
+    for (vertical = 1; vertical <= 1; vertical++) {
 
-    int movimentosVerticais = 2;
-    int movimentosHorizontais = 1;
-    int j;
+        for (horizontal = 1; horizontal <= 1; horizontal++) {
+            printf("Cima\n");
+            printf("Direita\n");
+        }
+    }
+
+    moverBispo(casas - 1);
+}
+
+
+void moverCavalo() {
+    int i, j;
 
     printf("Movimento do Cavalo:\n");
+    for (i = 1; i <= 2; i++) {
 
-    for (j = 1; j <= movimentosVerticais; j++) {
-        printf("Baixo\n");
-    }
+        
+        for (j = 1; j <= 2; j++) {
 
-    int contadorCavalo = 1;
-    while (contadorCavalo <= movimentosHorizontais) {
-        printf("Esquerda\n");
-        contadorCavalo++;
+            if (j > 1) {
+                continue;
+            }
+            printf("Cima\n");
+        }
     }
+    for (i = 1; i <= 1; i++) {
+        printf("Direita\n");
+        break;
+    }
+}
+
+int main() {
+    printf("Movimento da Torre:\n");
+    moverTorre(5);
+
+    printf("\n");
+
+    printf("Movimento do Bispo:\n");
+    moverBispo(5);
+
+    printf("\n");
+
+    printf("Movimento da Rainha:\n");
+    moverRainha(8);
+
+    printf("\n");
+
+    moverCavalo();
 
     return 0;
 }
